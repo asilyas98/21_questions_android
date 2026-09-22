@@ -1,0 +1,49 @@
+{
+  "name": "21-questions-app",
+  "version": "1.0.0",
+  "description": "21 Questions guessing game — local pass-and-play and online multiplayer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable",
+    "build:mas": "electron-builder --mac mas --universal"
+  },
+  "build": {
+    "appId": "com.asily.21questions",
+    "productName": "21 Questions",
+    "copyright": "Copyright © 2026 Ahmed",
+    "mac": {
+      "category": "public.app-category.games",
+      "target": [
+        {
+          "target": "mas",
+          "arch": [
+            "universal"
+          ]
+        }
+      ]
+    },
+    "mas": {
+      "entitlements": "entitlements.plist",
+      "entitlementsInherit": "entitlements.inherit.plist",
+      "type": "distribution",
+      "identity": null
+    },
+    "win": {
+      "target": "portable",
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2"
+  }
+}
